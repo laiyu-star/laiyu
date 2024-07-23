@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class FruitSumUp_1 {
+public class FruitSumUp_OneType {
 
     // 定义苹果和草莓的单价
     private static final int APPLE_PRICE = 8;

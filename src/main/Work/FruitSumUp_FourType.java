@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class FruitSumUp_3 {
+public class FruitSumUp_FourType {
 
     // 定义苹果和草莓和芒果的单价，期中草莓打八折
     private static final double APPLE_PRICE = 10.0;
-    private static final double STRAWBERRY_PRICE = 13 * 0.8;
+    private static final double STRAWBERRY_PRICE = 13.0 * 0.8;
     private static final double MANGO_PRICE = 20.0;
 
     /**
@@ -16,12 +16,19 @@ public class FruitSumUp_3 {
      * @return 水果总价
      */
     public static double sumUp(int appleAmount, int strawberryAmount, int mangoAmount) {
+        // 定义计算每种水果的总价
         double appleTotal = APPLE_PRICE * appleAmount;
         double strawberryTotal = STRAWBERRY_PRICE * strawberryAmount;
         double mangoTotal = MANGO_PRICE * mangoAmount;
 
-        // 计算总价
+        // 计算水果总价
         double totalPrice = appleTotal + strawberryTotal + mangoTotal;
+
+        // 判断是否满足满减条件
+        if (totalPrice >= 100) {
+            // 购物满100减10块
+            totalPrice -= 10;
+        }
         return totalPrice;
     }
 
@@ -42,6 +49,6 @@ public class FruitSumUp_3 {
         mango.close();
 
         double totalPrice = sumUp(Integer.parseInt(str1),Integer.parseInt(str2),Integer.parseInt(str3));
-        System.out.println("顾客购买水果的总价为: " + totalPrice + " 元");
+        System.out.println("顾客需要支付的总价为：" + totalPrice + "元");
     }
 }

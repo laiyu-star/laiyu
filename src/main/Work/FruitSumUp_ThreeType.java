@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-public class FruitSumUp_2 {
+public class FruitSumUp_ThreeType {
 
-    // 定义苹果和草莓和芒果的单价
-    private static final int APPLE_PRICE = 8;
-    private static final int STRAWBERRY_PRICE = 13;
-    private static final int MANGO_PRICE = 20;
+    // 定义苹果和草莓和芒果的单价，期中草莓打八折
+    private static final double APPLE_PRICE = 10.0;
+    private static final double STRAWBERRY_PRICE = 13 * 0.8;
+    private static final double MANGO_PRICE = 20.0;
 
     /**
      * 定义计算顾客购买水果的总价
@@ -15,13 +15,13 @@ public class FruitSumUp_2 {
      * @param mangoAmount 芒果斤数
      * @return 水果总价
      */
-    public static int sumUp(int appleAmount, int strawberryAmount, int mangoAmount) {
-        int appleTotal = APPLE_PRICE * appleAmount;
-        int strawberryTotal = STRAWBERRY_PRICE * strawberryAmount;
-        int mangoTotal = MANGO_PRICE * mangoAmount;
+    public static double sumUp(int appleAmount, int strawberryAmount, int mangoAmount) {
+        double appleTotal = APPLE_PRICE * appleAmount;
+        double strawberryTotal = STRAWBERRY_PRICE * strawberryAmount;
+        double mangoTotal = MANGO_PRICE * mangoAmount;
 
         // 计算总价
-        int totalPrice = appleTotal + strawberryTotal + mangoTotal;
+        double totalPrice = appleTotal + strawberryTotal + mangoTotal;
         return totalPrice;
     }
 
@@ -41,7 +41,7 @@ public class FruitSumUp_2 {
         strawberry.close();
         mango.close();
 
-        int totalPrice = sumUp(Integer.parseInt(str1),Integer.parseInt(str2),Integer.parseInt(str3));
+        double totalPrice = sumUp(Integer.parseInt(str1),Integer.parseInt(str2),Integer.parseInt(str3));
         System.out.println("顾客购买水果的总价为: " + totalPrice + " 元");
     }
 }
