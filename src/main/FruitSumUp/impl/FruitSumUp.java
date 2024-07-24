@@ -100,13 +100,13 @@ public class FruitSumUp {
         int strawberryAmount = 5; // 假设顾客购买了5斤草莓
         int mango = 0; // 假设顾客购买了0斤芒果
         double totalPriceOne = sumUpOne(appleAmount,strawberryAmount);
-        System.out.println("顾客需要支付的总价为：" + totalPriceOne + "元");
+        System.out.println("情景一：顾客需要支付的总价为：" + totalPriceOne + "元");
         double totalPriceTwo = sumUpTwo(appleAmount,strawberryAmount,mango);
-        System.out.println("加上芒果后顾客需要支付的总价为：" + totalPriceTwo + "元");
+        System.out.println("情景二：加上芒果后顾客需要支付的总价为：" + totalPriceTwo + "元");
         double totalPriceThree = sumUpThree(appleAmount,strawberryAmount,mango);
-        System.out.println("草莓打八折后顾客需要支付的总价为：" + totalPriceThree + "元");
+        System.out.println("情景三：草莓打八折后顾客需要支付的总价为：" + totalPriceThree + "元");
         double totalPriceFour = sumUpFour(appleAmount,strawberryAmount,mango);
-        System.out.println("优惠活动后顾客需要支付的总价为：" + totalPriceFour + "元");*/
+        System.out.println("情景四：顾客需要支付的总价为：" + totalPriceFour + "元");*/
 
 
 
