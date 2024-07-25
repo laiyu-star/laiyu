@@ -1,49 +1,66 @@
 package Service.FruitSumUp.impl;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 class FruitSumUpServiceImplImplTest {
 
-    FruitSumUpServiceImplImpl fruitSumUp = new FruitSumUpServiceImplImpl();
+    @InjectMocks
+    FruitSumUpServiceImplImpl fruitSumUpServiceImplImpl;
 
-    @Test
-    void sumUpOne() {
-        BigDecimal result = fruitSumUp.sumUpOne(1,1);
-        System.out.println("情景一：顾客需要支付的总价为：" + result + "元");
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.initMocks(this);
     }
 
     @Test
-    void sumUpTwo() {
-        BigDecimal result = fruitSumUp.sumUpTwo(1,1,2);
-        System.out.println("情景二：加上芒果后顾客需要支付的总价为：" + result + "元");
+    void testMain() {
+        FruitSumUpServiceImplImpl.main(new String[]{"args"});
     }
 
     @Test
-    void sumUpThree() {
-        BigDecimal result = fruitSumUp.sumUpThree(1,1,1);
-        System.out.println("情景三：草莓打八折后顾客需要支付的总价为：" + result + "元");
+    void testSumUpOne() {
+        BigDecimal result = fruitSumUpServiceImplImpl.sumUpOne(1, 1);
+        Assertions.assertEquals(new BigDecimal(0), result);
     }
 
     @Test
-    void sumUpFour() {
-        BigDecimal result = fruitSumUp.sumUpFour(1,5,2);
+    void testSumUpTwo() {
+        BigDecimal result = fruitSumUpServiceImplImpl.sumUpTwo(1, 1, 1);
+        Assertions.assertEquals(new BigDecimal(0), result);
+    }
+
+    @Test
+    void testSumUpThree() {
+        BigDecimal result = fruitSumUpServiceImplImpl.sumUpThree(1, 1, 1);
+        Assertions.assertEquals(new BigDecimal(0), result);
+    }
+
+    @Test
+    void testSumUpFour() {
+        BigDecimal result = fruitSumUpServiceImplImpl.sumUpFour(1,5,2);
         System.out.println("情景四：金额为100元，顾客需要支付的总价为：" + result + "元");
-        BigDecimal result1 = fruitSumUp.sumUpFour(5,2,2);
+        Assertions.assertEquals(new BigDecimal(0), result);
+        BigDecimal result1 = fruitSumUpServiceImplImpl.sumUpFour(5,2,2);
         System.out.println("情景四：金额为100.8元，顾客需要支付的总价为：" + result1 + "元");
-        BigDecimal result2 = fruitSumUp.sumUpFour(6,3,1);
+        Assertions.assertEquals(new BigDecimal(0), result1);
+        BigDecimal result2 = fruitSumUpServiceImplImpl.sumUpFour(6,3,1);
         System.out.println("情景四：金额为99.2元，顾客需要支付的总价为：" + result2 + "元");
+        Assertions.assertEquals(new BigDecimal(0), result2);
     }
 
     @Test
-    void isInteger() {
-        fruitSumUp.isInteger(123.0);
-    }
-
-    @Test
-    void main() {
+    void testIsInteger() {
+        boolean result = fruitSumUpServiceImplImpl.isInteger(0d);
+        Assertions.assertEquals(true, result);
     }
 }
+

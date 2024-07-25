@@ -7,4 +7,23 @@
     <artifactId>Work_FruitSumUp</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>3.8.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>3.0.5</artifactId>
+            <version>${easyexcel.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/easyexcel-3.0.5.jar</systemPath>
+        </dependency>
+    </dependencies>
+
+
+
 </project>
