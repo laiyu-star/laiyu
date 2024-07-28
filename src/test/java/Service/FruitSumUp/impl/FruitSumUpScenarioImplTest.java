@@ -3,13 +3,7 @@ package Service.FruitSumUp.impl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-
 import java.math.BigDecimal;
-
-import static org.mockito.Mockito.*;
 
 class FruitSumUpScenarioImplTest {
 
